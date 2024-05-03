@@ -8,7 +8,7 @@
 - [x] ui boiler plate
 - [x] add assets
 - [x] build project card
-- [ ] update descriptions
+- [x] update descriptions
 - [ ] home section
 - [ ] work highlights
 - [ ] contact form

@@ -14,7 +14,7 @@ export const projectList = [
     background: 'bg-blue-400',
     imagePath: '/src/assets/winter-league.png',
     altText: 'Cloudy white sphere resembling a snowball.',
-    body: 'Feature rich webapp for a local ultimate frisbee community league. Users can signup, register, track results, and find a team or create one with friends.',
+    body: 'Feature rich webapp for a local ultimate frisbee community league. Signup, register, or create a team with friends!',
     techStack: ['Firebase', 'TypeScript', 'Stripe'],
   },
   {
@@ -50,7 +50,7 @@ export const projectList = [
     background: 'bg-violet-500',
     imagePath: '/src/assets/rival-dex.png',
     altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Users can create their dream team and view famous rivals from the Pokémon series. Complete with data visualization, multi-method authentication, and several UI themes.',
+    body: 'Pokémon API inspired webapp complete with data visualization, multi-method authentication, and several UI themes.',
     techStack: ['Firebase', 'Authentication', 'Local storage'],
   },
   {

@@ -56,16 +56,16 @@ if (!images[imagePath])
       <p class='hidden sm:inline-flex'>
         {body}
       </p>
-      <div class='inline-flex space-x-2 items-center'>
+      <div class='inline-flex items-center flex-wrap'>
         {
           techStack.map((tech, index) => {
             const lastIndex = techStack.length - 1
 
             return (
               <>
-                <p>{tech}</p>
+                <p class='mr-2'>{tech}</p>
                 {index < lastIndex && (
-                  <span class={cn('h-2 w-2 rounded-full', background)} />
+                  <span class={cn('mr-2 h-2 w-2 rounded-full', background)} />
                 )}
               </>
             )
