@@ -2,75 +2,10 @@
 import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import '@/styles/globals.css'
-
-const projects = [
-  {
-    title: 'Gamepoint Performance',
-    href: 'https://www.gamepointperformance.com/',
-    background: 'bg-slate-900',
-    imagePath: '/src/assets/gpp.png',
-    altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Firebase powered dashboard for famous pokemon trainers and their teams',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-  },
-  {
-    title: 'Minnesota Winter League',
-    href: 'https://www.mplswinterleague.com/',
-    background: 'bg-blue-400',
-    imagePath: '/src/assets/winter-league.png',
-    altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Firebase powered dashboard for famous pokemon trainers and their teams',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-  },
-  {
-    title: 'Tournament Rating System',
-    href: 'https://tundra-santa.vercel.app/',
-    background: 'bg-emerald-400',
-    imagePath: '/src/assets/tournament-rating.png',
-    altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Firebase powered dashboard for famous pokemon trainers and their teams',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-  },
-  {
-    title: 'Matchup Project',
-    href: 'https://balanced-workforce.vercel.app/',
-    background: 'bg-orange-400',
-    imagePath: '/src/assets/matchup.png',
-    altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Firebase powered dashboard for famous pokemon trainers and their teams',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-  },
-  {
-    title: 'Engage Plus',
-    href: 'https://engageplus.vercel.app/',
-    background: 'bg-red-500',
-    imagePath: '/src/assets/engage.png',
-    altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Firebase powered dashboard for famous pokemon trainers and their teams',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-  },
-  {
-    title: 'Rival Dex',
-    href: 'https://rival-dex.vercel.app/',
-    background: 'bg-violet-500',
-    imagePath: '/src/assets/rival-dex.png',
-    altText: 'Gary Oak standing confidently with hand solute',
-    body: 'Firebase powered dashboard for famous pokemon trainers and their teams',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-  },
-  {
-    title: 'Hero Wind',
-    href: 'https://hero-wind.vercel.app/',
-    background: 'bg-yellow-400',
-    imagePath: '/src/assets/hero-wind.png',
-    altText: 'Wonder Woman arms crossed, smiling',
-    body: 'LLM data set analyzed with recharts and filtered search.',
-    techStack: ['React', 'Recharts', 'Tailwind CSS'],
-  },
-]
+import { projectList } from '@/lib/consts'
 ---
 
-<Layout title='Welcome to Astro.'>
+<Layout title='Lost Yeti.'>
   <main>
     <!-- <svg
       class='astro-a'
@@ -100,11 +35,10 @@ const projects = [
         </linearGradient>
       </defs>
     </svg> -->
-    <h1>Welcome to <span class='text-gradient'>Astro</span></h1>
 
-    <div class='container border-2 border-red-500 space-y-16'>
+    <div class='container py-16 space-y-16'>
       {
-        projects.map(
+        projectList.map(
           (
             { title, imagePath, altText, body, href, background, techStack },
             index
