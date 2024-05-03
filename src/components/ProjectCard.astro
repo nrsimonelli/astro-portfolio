@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+import { cn } from '@/lib/utils'
+import { Button } from './ui/button'
+
+interface Props {
+  title: string
+  body: string
+  href: string
+  imagePath: string
+  isReverse: boolean
+  altText: string
+  background: string
+  techStack: string[]
+}
+
+const {
+  href,
+  title,
+  body,
+  altText,
+  imagePath,
+  isReverse,
+  background,
+  techStack,
+} = Astro.props
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}'
+)
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  )
+---
+
+<div
+  class={cn(
+    'rounded-lg overflow-clip shadow-xl transition-all duration-300 h-[520px] md:flex-row flex flex-col md:max-w-screen-md mx-auto md:h-[336px] lg:h-[445px] lg:max-w-screen-lg min-w-[280px]',
+    isReverse ? 'md:flex-row-reverse' : 'md:flex-row'
+  )}
+>
+  <div class={cn('min-h-0 flex-1 shrink-0', background)}>
+    <Image
+      class='bg-contain bg-no-repeat h-full w-auto mx-auto'
+      src={images[imagePath]()}
+      alt={altText}
+    />
+  </div>
+
+  <div class='flex-1 shrink-0 min-h-0 flex items-center'>
+    <div class='space-y-8 sm:space-y-4 lg:space-y-8 mx-16'>
+      <p class='text-2xl font-semibold after:'>
+        {title}
+      </p>
+      <p class='hidden sm:inline-flex'>
+        {body}
+      </p>
+      <div class='inline-flex space-x-2 items-center'>
+        {
+          techStack.map((tech, index) => {
+            const lastIndex = techStack.length - 1
+
+            return (
+              <>
+                <p>{tech}</p>
+                {index < lastIndex && (
+                  <span class={cn('h-2 w-2 rounded-full', background)} />
+                )}
+              </>
+            )
+          })
+        }
+      </div>
+      <div>
+        <a href={href}>
+          <Button>View Project</Button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
