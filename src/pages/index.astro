@@ -1,8 +1,14 @@
 ---
+import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import '@/styles/globals.css'
-import { projectList } from '@/lib/consts'
+import { projectList, workList } from '@/lib/consts'
+import { Image } from 'astro:assets'
+import calabrio from '@/assets/calabrio.jpg'
+import thingbits from '@/assets/thingbits.png'
+import lostYeti from '@/assets/lost-yeti.png'
+
+const workImage = [calabrio, thingbits, lostYeti]
 ---
 
 <Layout title='Lost Yeti.'>
@@ -35,6 +41,45 @@ import { projectList } from '@/lib/consts'
         </linearGradient>
       </defs>
     </svg> -->
+    <!-- hero -->
+    <div class='container'>
+      <div>
+        <p>Hello, I am Nick Simonelli</p>
+        <p>Software Enigneer & Front End Developer based in Minneapolis</p>
+        <p>
+          I build excellent user interfaces and have a passion for solving
+          complex problems.
+        </p>
+      </div>
+    </div>
+    <!-- WORK -->
+    <!-- Calabrio / Thingbits / Lost Yeti -->
+    <div class='container'>
+      <p>Work</p>
+
+      <div
+        class='flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
+      >
+        {
+          workList.map(({ company, jobTitle, description }, index) => (
+            <div class='shadow-xl p-8 rounded-lg space-y-4 md:h-[320px] flex flex-col flex-1 basis-80'>
+              <div class='inline-flex space-x-2 items-center'>
+                <Image
+                  class={'h-16 w-16 rounded-full'}
+                  src={workImage[index]}
+                  alt='Calabrio logo'
+                />
+                <p class='font-semibold text-2xl'>{company}</p>
+              </div>
+              <div class='space-y-2'>
+                <p class='font-semibold'>{jobTitle}</p>
+                <p>{description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
 
     <div class='container py-16 space-y-16'>
       {

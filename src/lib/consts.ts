@@ -5,7 +5,7 @@ export const projectList = [
     background: 'bg-slate-900',
     imagePath: '/src/assets/gpp.png',
     altText: 'Gamepoint Performance logo.',
-    body: `Website redesign and signup feature implementation for Gamepoint Performance's online business and training offerings.`,
+    body: `Website redesign and signup feature implementation for Gamepoint Performance's online training business.`,
     techStack: ['Resend', 'Supabase', 'React hook form'],
   },
   {
@@ -24,7 +24,7 @@ export const projectList = [
     imagePath: '/src/assets/tournament-rating.png',
     altText: 'Three filled circles in increasing size.',
     body: 'Applied statistical analysis to large multiplayer data set for online board game tournaments.',
-    techStack: ['Nextjs', 'Python', 'Supabase'],
+    techStack: ['Next.js', 'Python', 'Supabase'],
   },
   {
     title: 'Engage Plus',
@@ -61,5 +61,26 @@ export const projectList = [
     altText: 'Wonder Woman arms crossed, smiling',
     body: 'LLM data set analyzed with recharts and filtered searching capability with the added bonus of a superhero theme.',
     techStack: ['Superhero API', 'Radix', 'Stitches'],
+  },
+]
+
+export const workList = [
+  {
+    company: 'Calabrio',
+    jobTitle: 'Senior Software Engineer, Front End',
+    description:
+      'Built, maintained, and delivered modern user interfaces for a world class work force optimization suite.',
+  },
+  {
+    company: 'Thingbits',
+    jobTitle: 'Software Engineer, Full Stack',
+    description:
+      'Integrated technical solutions for the application of hardware and software in the IoT space.',
+  },
+  {
+    company: 'Lost Yeti Design Co.',
+    jobTitle: 'Co-Founder, Tech Lead',
+    description:
+      'Providing elegant web design and technical solutions for small business and clients.',
   },
 ]
