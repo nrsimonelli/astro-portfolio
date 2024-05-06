@@ -9,8 +9,9 @@
 - [x] add assets
 - [x] build project card
 - [x] update descriptions
-- [ ] home section
-- [ ] work highlights
+- [x] work highlights
+- [x] create visual assets
+- [x] add feature animation
 - [ ] contact form
 - [ ] navigation
 - [ ] SEO and metadata
