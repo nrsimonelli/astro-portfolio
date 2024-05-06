@@ -81,6 +81,6 @@ export const workList = [
     company: 'Lost Yeti Design Co.',
     jobTitle: 'Co-Founder, Tech Lead',
     description:
-      'Providing elegant web design and technical solutions for small business and clients.',
+      'Providing elegant web design and technical solutions for individual clients and small business.',
   },
 ]

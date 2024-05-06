@@ -3,8 +3,9 @@
 	 <defs>
     <linearGradient id="myGradient" gradientTransform="rotate(45)">
       <stop offset="5%"  stop-color="#434343" />
-      <stop offset="95%" stop-color="black" />
+      <stop offset="95%" stop-color="#000000" />
     </linearGradient>
   </defs>
 <circle cx="60" cy="60.834" r="54.167" fill="url('#myGradient')" />
 </svg>
+
