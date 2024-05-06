@@ -9,6 +9,7 @@ import bggg from '@/assets/bg.svg'
 import smallWave from '@/assets/wave-9-16.svg'
 import bigWave from '@/assets/wave-16-9.svg'
 import ExperienceCard from '@/components/ExperienceCard.astro'
+// import { Button } from '@/components/ui/button'
 ---
 
 <Layout title='Simonelli UI'>
@@ -19,14 +20,14 @@ import ExperienceCard from '@/components/ExperienceCard.astro'
         class='max-w-screen-lg w-full px-8 lg:px-0 mx-auto text-background space-y-16 transition-all duration-300'
       >
         <div class='space-y-8 max-w-[600px]'>
-          <div class='text-4xl md:text-7xl font-bold space-y-2'>
+          <div class='space-y-2'>
             <p
               class='font-light uppercase text-base md:text-xl tracking-widest'
             >
               SOFTWARE ENGINEER
             </p>
             <p
-              class='bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-400'
+              class='text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-400'
             >
               Hi, I'm Nick Simonelli
             </p>
@@ -77,10 +78,16 @@ import ExperienceCard from '@/components/ExperienceCard.astro'
 
     <!-- Calabrio / Thingbits / Lost Yeti -->
     <div class='container mt-[200px] py-16 space-y-16' id='work'>
-      <p class='text-3xl font-bold md:text-center'>Work Experience</p>
+      <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
+        <p
+          class='text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-500 font-bold'
+        >
+          Work Experience
+        </p>
+      </div>
 
       <div
-        class='flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
+        class='md:max-w-screen-md mx-auto lg:max-w-screen-lg flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
       >
         {
           EXPERIENCE.map(({ company, jobTitle, description, imagePath }) => (
@@ -96,7 +103,13 @@ import ExperienceCard from '@/components/ExperienceCard.astro'
     </div>
 
     <div class='container py-16 space-y-16' id='projects'>
-      <p class='text-3xl font-bold md:text-center'>Live Projects</p>
+      <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
+        <p
+          class='text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-500 font-bold'
+        >
+          Live Projects
+        </p>
+      </div>
       {
         PROJECTS.map(
           (
@@ -118,7 +131,13 @@ import ExperienceCard from '@/components/ExperienceCard.astro'
       }
     </div>
   </main>
-  <p class='text-center py-12'>
-    Developed by nrsimonelli, {new Date().getFullYear()}
-  </p>
+  <div class='py-12 text-center'>
+    <!-- <p class='text-3xl'>Contact</p>
+    <a href='mailto:nrsimonelli@gmail.com'>
+      <Button variant='link'> nrsimonelli@gmail.com </Button>
+    </a> -->
+    <p class='text-center'>
+      Developed by nrsimonelli, {new Date().getFullYear()}
+    </p>
+  </div>
 </Layout>
