@@ -50,13 +50,13 @@ if (!images[imagePath])
 
   <div class='flex-1 shrink-0 min-h-0 flex items-center'>
     <div class='space-y-8 sm:space-y-4 lg:space-y-8 mx-16'>
-      <p class='text-2xl font-semibold after:'>
+      <p class='text-2xl font-semibold'>
         {title}
       </p>
       <p class='hidden sm:inline-flex'>
         {body}
       </p>
-      <div class='inline-flex items-center flex-wrap'>
+      <div class='inline-flex items-center flex-wrap text-sm'>
         {
           techStack.map((tech, index) => {
             const lastIndex = techStack.length - 1
@@ -65,7 +65,9 @@ if (!images[imagePath])
               <>
                 <p class='mr-2'>{tech}</p>
                 {index < lastIndex && (
-                  <span class={cn('mr-2 h-2 w-2 rounded-full', background)} />
+                  <span
+                    class={cn('mr-2 h-1.5 w-1.5 rounded-full', background)}
+                  />
                 )}
               </>
             )
