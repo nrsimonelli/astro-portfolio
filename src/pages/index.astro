@@ -57,42 +57,40 @@ import ExperienceCard from '@/components/ExperienceCard.astro'
       </div>
       <div class='absolute w-full h-full'>
         <Image
-          class='object-cover w-full h-full lg:hidden'
+          class='object-cover w-full h-full md:hidden'
           src={smallWave}
           alt='mobile background wave'
         />
         <Image
-          class='object-cover w-full h-full hidden lg:block'
+          class='object-cover w-full h-full hidden md:block'
           src={bigWave}
           alt='desktop background wave'
         />
       </div>
 
       <div
-        class='absolute w-full left-1/2 -translate-x-1/2 bottom-0 h-[400px] max-w-screen-lg'
+        class='absolute w-full left-1/2 -translate-x-1/2 bottom-0 h-[400px] translate-y-1/2 max-w-screen-lg'
       >
         <Scene client:load />
       </div>
     </div>
 
     <!-- Calabrio / Thingbits / Lost Yeti -->
-    <div class='container py-16 space-y-16' id='work'>
+    <div class='container mt-[200px] py-16 space-y-16' id='work'>
       <p class='text-3xl font-bold md:text-center'>Work Experience</p>
 
       <div
         class='flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
       >
         {
-          EXPERIENCE.map(
-            ({ company, jobTitle, description, imagePath }, index) => (
-              <ExperienceCard
-                company={company}
-                jobTitle={jobTitle}
-                description={description}
-                imagePath={imagePath}
-              />
-            )
-          )
+          EXPERIENCE.map(({ company, jobTitle, description, imagePath }) => (
+            <ExperienceCard
+              company={company}
+              jobTitle={jobTitle}
+              description={description}
+              imagePath={imagePath}
+            />
+          ))
         }
       </div>
     </div>
