@@ -2,17 +2,13 @@
 import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import { projectList, workList } from '@/lib/constants'
+import { PROJECTS, EXPERIENCE } from '@/lib/constants'
 import { Image } from 'astro:assets'
-import calabrio from '@/assets/calabrio.jpg'
-import thingbits from '@/assets/thingbits.png'
-import lostYeti from '@/assets/lost-yeti.png'
 import { Scene } from '@/components/scene/scene'
 import bggg from '@/assets/bg.svg'
 import smallWave from '@/assets/wave-9-16.svg'
 import bigWave from '@/assets/wave-16-9.svg'
-
-const workImage = [calabrio, thingbits, lostYeti]
+import ExperienceCard from '@/components/ExperienceCard.astro'
 ---
 
 <Layout title='Simonelli UI'>
@@ -79,7 +75,6 @@ const workImage = [calabrio, thingbits, lostYeti]
       </div>
     </div>
 
-    <!-- WORK -->
     <!-- Calabrio / Thingbits / Lost Yeti -->
     <div class='container py-16 space-y-16' id='work'>
       <p class='text-3xl font-bold md:text-center'>Work Experience</p>
@@ -88,22 +83,16 @@ const workImage = [calabrio, thingbits, lostYeti]
         class='flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
       >
         {
-          workList.map(({ company, jobTitle, description }, index) => (
-            <div class='shadow-xl p-8 rounded-lg space-y-4  flex flex-col flex-1 basis-80 md:h-[320px] justify-center md:justify-start'>
-              <div class='inline-flex space-x-2 items-center'>
-                <Image
-                  class={'h-16 w-16 rounded-full'}
-                  src={workImage[index]}
-                  alt='Calabrio logo'
-                />
-                <p class='font-semibold text-2xl'>{company}</p>
-              </div>
-              <div class='space-y-2'>
-                <p class='font-semibold'>{jobTitle}</p>
-                <p>{description}</p>
-              </div>
-            </div>
-          ))
+          EXPERIENCE.map(
+            ({ company, jobTitle, description, imagePath }, index) => (
+              <ExperienceCard
+                company={company}
+                jobTitle={jobTitle}
+                description={description}
+                imagePath={imagePath}
+              />
+            )
+          )
         }
       </div>
     </div>
@@ -111,7 +100,7 @@ const workImage = [calabrio, thingbits, lostYeti]
     <div class='container py-16 space-y-16' id='projects'>
       <p class='text-3xl font-bold md:text-center'>Live Projects</p>
       {
-        projectList.map(
+        PROJECTS.map(
           (
             { title, imagePath, altText, body, href, background, techStack },
             index

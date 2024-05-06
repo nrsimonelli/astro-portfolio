@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+import { cn } from '@/lib/utils'
+
+interface Props {
+  company: string
+  jobTitle: string
+  description: string
+  imagePath: string
+}
+
+const { company, jobTitle, description, imagePath } = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}'
+)
+
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  )
+---
+
+<div
+  class='shadow-xl p-8 rounded-lg space-y-4 flex flex-col flex-1 basis-80 md:h-[320px] justify-center md:justify-start'
+>
+  <div class='inline-flex space-x-2 items-center'>
+    <Image
+      class={'h-16 w-16 rounded-full'}
+      src={images[imagePath]()}
+      alt='work experience avatar logo'
+    />
+    <p class='font-semibold text-2xl'>{company}</p>
+  </div>
+  <div class='space-y-2'>
+    <p class='font-semibold'>{jobTitle}</p>
+    <p>{description}</p>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-export const projectList = [
+export const PROJECTS = [
   {
     title: 'Gamepoint Performance',
     href: 'https://www.gamepointperformance.com/',
@@ -64,23 +64,26 @@ export const projectList = [
   },
 ]
 
-export const workList = [
+export const EXPERIENCE = [
   {
     company: 'Calabrio',
     jobTitle: 'Senior Software Engineer, Front End',
     description:
       'Built, maintained, and delivered modern user interfaces for a world class work force optimization suite.',
+    imagePath: '/src/assets/calabrio.jpg',
   },
   {
     company: 'Thingbits',
     jobTitle: 'Software Engineer, Full Stack',
     description:
       'Integrated technical solutions for the application of hardware and software in the IoT space.',
+    imagePath: '/src/assets/thingbits.png',
   },
   {
     company: 'Lost Yeti Design Co.',
     jobTitle: 'Co-Founder, Tech Lead',
     description:
       'Providing elegant web design and technical solutions for individual clients and small business.',
+    imagePath: '/src/assets/lost-yeti.png',
   },
 ]
