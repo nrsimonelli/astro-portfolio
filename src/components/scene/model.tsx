@@ -28,20 +28,30 @@ export const Model = () => {
   //   { collapsed: true }
   // )
 
-  const materials = {
+  const darkVariation = {
     color: '#8b5cf6',
-    thickness: 0.1,
+    thickness: 0,
     roughness: 0.2,
-    transmission: 0.4,
-    ior: 1.2,
+    transmission: 1.0,
+    ior: 2.4,
     chromaticAberration: 0.02,
     backside: true,
   }
 
+  // const lightVariation = {
+  //   color: '#8b5cf6',
+  //   thickness: 0.1,
+  //   roughness: 0.2,
+  //   transmission: 0.4,
+  //   ior: 1.2,
+  //   chromaticAberration: 0.02,
+  //   backside: true,
+  // }
+
   return (
     <group scale={viewport.width / 3}>
       <mesh ref={torus} {...nodes.Torus002}>
-        <MeshTransmissionMaterial {...materials} />
+        <MeshTransmissionMaterial {...darkVariation} />
       </mesh>
     </group>
   )
