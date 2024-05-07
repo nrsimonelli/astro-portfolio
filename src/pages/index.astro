@@ -9,6 +9,7 @@ import bggg from '@/assets/bg.svg'
 import smallWave from '@/assets/wave-9-16.svg'
 import bigWave from '@/assets/wave-16-9.svg'
 import ExperienceCard from '@/components/ExperienceCard.astro'
+import Footer from '@/components/Footer.astro'
 ---
 
 <Layout title='Simonelli UI'>
@@ -118,14 +119,6 @@ import ExperienceCard from '@/components/ExperienceCard.astro'
         )
       }
     </div>
-    <div class='container py-16 space-y-16' id='contact'>
-      <p class='text-center'>
-        Developed by <a
-          class='hover:underline transition-all duration-300 underline-offset-4'
-          href='https://github.com/nrsimonelli'>nrsimonelli</a
-        >,
-        {new Date().getFullYear()}
-      </p>
-    </div>
+    <Footer />
   </main>
 </Layout>

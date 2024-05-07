@@ -1,0 +1,35 @@
+---
+import {
+  LinkedInLogoIcon,
+  GitHubLogoIcon,
+  EnvelopeClosedIcon,
+} from '@radix-ui/react-icons'
+---
+
+<div class='container py-16 space-y-16' id='contact'>
+  <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
+    <p
+      class='text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-500 font-bold'
+    >
+      Contact
+    </p>
+  </div>
+  <div class='flex items-center justify-center flex-row gap-4'>
+    <a href='https://github.com/nrsimonelli'>
+      <GitHubLogoIcon className='h-8 w-8' />
+    </a>
+    <a href='https://www.linkedin.com/in/nick-simonelli-6456a590/'>
+      <LinkedInLogoIcon className='h-8 w-8' />
+    </a>
+    <a href='mailto:nrsimonelli@gmail.com'>
+      <EnvelopeClosedIcon className='h-8 w-8' />
+    </a>
+  </div>
+  <p class='text-center'>
+    Developed by <a
+      class='hover:underline transition-all duration-300 underline-offset-4'
+      href='https://github.com/nrsimonelli'>nrsimonelli</a
+    >,
+    {new Date().getFullYear()}
+  </p>
+</div>
