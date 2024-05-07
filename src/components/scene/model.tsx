@@ -39,7 +39,7 @@ export const Model = () => {
   }
 
   return (
-    <group scale={viewport.width / 3.75}>
+    <group scale={viewport.width / 3}>
       <mesh ref={torus} {...nodes.Torus002}>
         <MeshTransmissionMaterial {...materials} />
       </mesh>
