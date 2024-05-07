@@ -6,14 +6,12 @@ import { PROJECTS, EXPERIENCE } from '@/lib/constants'
 import { Image } from 'astro:assets'
 import { Scene } from '@/components/scene/scene'
 import bggg from '@/assets/bg.svg'
-import smallWave from '@/assets/wave-9-16.svg'
-import bigWave from '@/assets/wave-16-9.svg'
 import ExperienceCard from '@/components/ExperienceCard.astro'
 import Footer from '@/components/Footer.astro'
 ---
 
 <Layout title='Simonelli UI'>
-  <main>
+  <main class='overflow-x-clip'>
     <!-- hero -->
     <div
       class='min-h-screen bg-black/90 flex flex-col justify-start lg:justify-center relative'
@@ -45,18 +43,6 @@ import Footer from '@/components/Footer.astro'
       <div class='absolute w-full h-full'>
         <Image class='object-cover w-full h-full' src={bggg} alt='grain' />
       </div>
-      <div class='absolute w-full h-full'>
-        <Image
-          class='object-cover w-full h-full md:hidden'
-          src={smallWave}
-          alt='mobile background wave'
-        />
-        <Image
-          class='object-cover w-full h-full hidden md:block'
-          src={bigWave}
-          alt='desktop background wave'
-        />
-      </div>
 
       <div
         class='absolute w-full translate-y-[15%] right-0 xl:translate-y-1/2 bottom-0 xl:bottom-1/2 h-[600px] max-w-screen-lg'
@@ -66,28 +52,35 @@ import Footer from '@/components/Footer.astro'
     </div>
 
     <!-- Calabrio / Thingbits / Lost Yeti -->
-    <div class='container py-16 space-y-16' id='work'>
-      <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
-        <p
-          class='text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-500 font-bold'
-        >
-          Work Experience
-        </p>
+    <div class='relative'>
+      <div
+        class='absolute origin-top-left left-0 top-0 w-[120%] rotate-[-5deg] bg-white h-[225px]'
+      >
       </div>
 
-      <div
-        class='md:max-w-screen-md mx-auto lg:max-w-screen-lg flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
-      >
-        {
-          EXPERIENCE.map(({ company, jobTitle, description, imagePath }) => (
-            <ExperienceCard
-              company={company}
-              jobTitle={jobTitle}
-              description={description}
-              imagePath={imagePath}
-            />
-          ))
-        }
+      <div class='container py-16 space-y-16 relative' id='work'>
+        <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
+          <p
+            class='text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-500 font-bold'
+          >
+            Work Experience
+          </p>
+        </div>
+
+        <div
+          class='md:max-w-screen-md mx-auto lg:max-w-screen-lg flex md:justify-center items-center gap-8 md:flex-row flex-col transition-all duration-300 flex-wrap'
+        >
+          {
+            EXPERIENCE.map(({ company, jobTitle, description, imagePath }) => (
+              <ExperienceCard
+                company={company}
+                jobTitle={jobTitle}
+                description={description}
+                imagePath={imagePath}
+              />
+            ))
+          }
+        </div>
       </div>
     </div>
 
