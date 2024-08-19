@@ -36,11 +36,12 @@ if (!images[imagePath])
 
 <div
   class={cn(
-    'rounded-lg overflow-clip shadow-xl transition-all duration-300 h-[520px] md:flex-row flex flex-col md:max-w-screen-md mx-auto md:h-[336px] lg:h-[445px] lg:max-w-screen-lg min-w-[280px]',
+    'rounded-lg overflow-clip shadow-xl transition-all duration-300 h-[520px] md:flex-row flex flex-col md:max-w-screen-md mx-auto md:h-[336px] lg:h-[445px] lg:max-w-screen-lg min-w-[280px] bg-card text-card-foreground',
     isReverse ? 'md:flex-row-reverse' : 'md:flex-row'
   )}
 >
-  <div class={cn('min-h-0 flex-1 shrink-0', background)}>
+  <!-- <div class={cn('min-h-0 flex-1 shrink-0', background)}> -->
+  <div class={cn('min-h-0 flex-1 shrink-0', 'bg-primary')}>
     <Image
       class='bg-contain bg-no-repeat h-full w-auto mx-auto'
       src={images[imagePath]()}
@@ -53,7 +54,7 @@ if (!images[imagePath])
       <p class='text-2xl font-semibold'>
         {title}
       </p>
-      <p class='hidden sm:inline-flex'>
+      <p class='hidden sm:inline-flex text-muted-foreground'>
         {body}
       </p>
       <div class='inline-flex items-center flex-wrap text-sm'>
@@ -63,11 +64,14 @@ if (!images[imagePath])
 
             return (
               <>
-                <p class='mr-2'>{tech}</p>
+                <p class='mr-2 text-muted-foreground'>{tech}</p>
                 {index < lastIndex && (
                   <span
-                    class={cn('mr-2 h-1.5 w-1.5 rounded-full', background)}
+                    class={cn('mr-2 h-1.5 w-1.5 rounded-full', 'bg-primary')}
                   />
+                  // <span
+                  //   class={cn('mr-2 h-1.5 w-1.5 rounded-full', background)}
+                  // />
                 )}
               </>
             )

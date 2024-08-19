@@ -4,8 +4,8 @@ import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import { PROJECTS, EXPERIENCE } from '@/lib/constants'
 import { Image } from 'astro:assets'
-import { Scene } from '@/components/scene/scene'
-import bggg from '@/assets/bg.svg'
+// import { Scene } from '@/components/scene/scene'
+// import bggg from '@/assets/bg.svg'
 import ExperienceCard from '@/components/ExperienceCard.astro'
 import Footer from '@/components/Footer.astro'
 ---
@@ -13,19 +13,22 @@ import Footer from '@/components/Footer.astro'
 <Layout title='Simonelli UI'>
   <main class='overflow-x-clip'>
     <!-- hero -->
-    <div
-      class='min-h-screen bg-black/90 flex flex-col justify-start lg:justify-center relative'
+    <section
+      class='min-h-screen flex flex-col justify-start lg:justify-center relative bg-foreground text-background'
     >
       <div
-        class='max-w-screen-lg w-full px-8 lg:px-0 mt-32 lg:mt-0 mx-auto text-background space-y-16 transition-all duration-300'
+        class='max-w-screen-lg w-full px-8 lg:px-0 mt-32 lg:mt-0 mx-auto space-y-16 transition-all duration-300'
       >
         <div class='space-y-8 max-w-[600px]'>
           <div class='space-y-2'>
             <p class='font-light uppercase text-xl md:text-2xl tracking-widest'>
               SOFTWARE ENGINEER
             </p>
-            <p class='text-5xl md:text-7xl font-bold text-blue-400'>
-              Hi, I'm Nick Simonelli
+            <p class='text-5xl md:text-7xl font-bold'>
+              Hi, I'm  
+              <span class="text-transparent bg-clip-text bg-gradient-to-br from-emerald-500 to-green-400">
+                Nick Simonelli
+                </span>
             </p>
           </div>
 
@@ -38,27 +41,27 @@ import Footer from '@/components/Footer.astro'
         </div>
       </div>
 
-      <div class='absolute w-full h-full'>
+      <!-- <div class='absolute w-full h-full'>
         <Image class='object-cover w-full h-full' src={bggg} alt='grain' />
-      </div>
+      </div> -->
 
-      <div
+      <!-- <div
         class='absolute w-full lg:w-1/2 lg:translate-y-1/2 lg:right-0 lg:translate-x-0 lg:bottom-1/2 translate-y-[15%] translate-x-1/2 right-1/2 xl:translate-y-1/2 bottom-0 xl:bottom-1/2 h-[600px] max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg z-10'
       >
         <Scene client:load />
-      </div>
-    </div>
+      </div> -->
+    </section>
 
     <!-- Calabrio / Thingbits / Lost Yeti -->
     <div class='relative'>
       <div
-        class='absolute origin-top-left left-0 top-0 w-[120%] rotate-[-5deg] bg-white h-[225px]'
+        class='absolute origin-top-left left-0 top-0 w-[120%] rotate-[-5deg] bg-background h-[225px]'
       >
       </div>
 
       <div class='container py-16 space-y-16 relative' id='work'>
         <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
-          <p class='text-3xl lg:text-5xl text-blue-500 font-bold'>
+          <p class='text-3xl lg:text-5xl font-bold'>
             Work Experience
           </p>
         </div>
@@ -82,7 +85,7 @@ import Footer from '@/components/Footer.astro'
 
     <div class='container py-16 space-y-16' id='projects'>
       <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
-        <p class='text-3xl lg:text-5xl text-blue-500 font-bold'>
+        <p class='text-3xl lg:text-5xl font-bold'>
           Live Projects
         </p>
       </div>
