@@ -8,18 +8,21 @@ import { Image } from 'astro:assets'
 // import bggg from '@/assets/bg.svg'
 import ExperienceCard from '@/components/ExperienceCard.astro'
 import Footer from '@/components/Footer.astro'
+import { Button } from '@/components/ui/button'
+import { HeroIcon } from '@/components/HeroIcon'
+import { ScrollButton } from '@/components/ScrollButton'
 ---
 
 <Layout title='Simonelli UI'>
   <main class='overflow-x-clip'>
     <!-- hero -->
     <section
-      class='min-h-screen flex flex-col justify-start lg:justify-center relative bg-foreground text-background'
+      class='min-h-screen relative bg-foreground text-background transition-all duration-300'
     >
       <div
-        class='max-w-screen-lg w-full px-8 lg:px-0 mt-32 lg:mt-0 mx-auto space-y-16 transition-all duration-300'
+        class='max-w-screen-lg w-full px-8 lg:px-0 lg:mt-0 mx-auto space-y-16 lg:space-y-0 flex flex-col lg:flex-row border border-red-400'
       >
-        <div class='space-y-8 max-w-[600px]'>
+        <div class='space-y-8 flex flex-1 flex-col'>
           <div class='space-y-2'>
             <p class='font-light uppercase text-xl md:text-2xl tracking-widest'>
               SOFTWARE ENGINEER
@@ -39,7 +42,25 @@ import Footer from '@/components/Footer.astro'
             </p>
           </div>
         </div>
+
+        <div class="flex flex-col flex-1 justify-center space-y-4">
+          <!-- look up astro directives, client:load seems to mess with the css somehow... -->
+          <ScrollButton target="work">
+            View Work Experience
+          </ScrollButton>
+            
+          <ScrollButton  target="projects">
+            View Projects
+          </ScrollButton>
+           
+          <ScrollButton  target="contact">
+            Contact
+          </ScrollButton>
+        </div>
+            
+          
       </div>
+      <!-- <HeroIcon /> -->
 
       <!-- <div class='absolute w-full h-full'>
         <Image class='object-cover w-full h-full' src={bggg} alt='grain' />
@@ -53,13 +74,13 @@ import Footer from '@/components/Footer.astro'
     </section>
 
     <!-- Calabrio / Thingbits / Lost Yeti -->
-    <div class='relative'>
+    <section class='relative' id='work'>
       <div
         class='absolute origin-top-left left-0 top-0 w-[120%] rotate-[-5deg] bg-background h-[225px]'
       >
       </div>
 
-      <div class='container py-16 space-y-16 relative' id='work'>
+      <div class='container py-16 space-y-16 relative' >
         <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
           <p class='text-3xl lg:text-5xl font-bold'>
             Work Experience
@@ -81,9 +102,9 @@ import Footer from '@/components/Footer.astro'
           }
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class='container py-16 space-y-16' id='projects'>
+    <section class='container py-16 space-y-16' id='projects'>
       <div class='md:max-w-screen-md mx-auto lg:max-w-screen-lg'>
         <p class='text-3xl lg:text-5xl font-bold'>
           Live Projects
@@ -108,7 +129,7 @@ import Footer from '@/components/Footer.astro'
           )
         )
       }
-    </div>
+    </section>
     <Footer />
   </main>
 </Layout>
